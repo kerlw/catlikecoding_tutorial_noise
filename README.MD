@@ -43,6 +43,14 @@ which does vectorize with SSE2. But I ignore this to keep things consistent.
 
 ## 2. Hashing Space ##
 
+```C#
+            hashesBuffer.SetData(hashes.Reinterpret<uint>(4 * 4));
+            positionsBuffer.SetData(positions.Reinterpret<float3>(3 * 4 * 4));
+            normalsBuffer.SetData(normals.Reinterpret<float3>(3 * 4 * 4));
+```			
+> `Can't we directly copy the vectorized data to the compute buffers?`
+> Although the CPU and GPU both interpret the compute buffer data in their own way, it turns out that in some situations data misalignment can happen. So we have to make sure that the compute buffers explicitly use the un-vectorized data.
+
 ## 3. Value Noise ##
 
 ## 4. Perlin Noise ##
