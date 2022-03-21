@@ -53,6 +53,9 @@ which does vectorize with SSE2. But I ignore this to keep things consistent.
 
 ## 3. Value Noise ##
 
+> `How do extension methods work?`
+> If you go deep enough, there are no such things as objects. There is just data, some of which represents information and some of which represents instructions. Objects are an abstraction. When invoking a method on an object what really happens is that the CPU pushes some data—the arguments—on a data stack and then jumps to the relevant instructions. The object on which the method was invoked is just another argument. An extension method makes this explicit.
+
 ## 4. Perlin Noise ##
 
 ## 5. Noise Variants ##
