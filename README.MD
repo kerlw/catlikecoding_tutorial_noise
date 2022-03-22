@@ -58,6 +58,9 @@ which does vectorize with SSE2. But I ignore this to keep things consistent.
 
 ## 4. Perlin Noise ##
 
+> `Isn't Perlin noise based on a permutation table?`
+> Yes, but a permutation table is just one way of generating pseudorandom values for lattice points. It works well for simple hardware but suffers from a small domain and cannot be seeded. It also doesn't vectorize because it requires multiple array lookups, for which there are no SIMD instructions. So we base it on SmallXXHash4 instead.
+
 ## 5. Noise Variants ##
 
 ## 6. Voronoi Noise ##
